@@ -2,11 +2,15 @@
 // Created by Austin Berard on 11/18/16.
 //
 
+#include <iostream>
 #include "../include/Vector.h"
-#include <vector>
-#include<iostream>
 using namespace std;
 typedef vector<double> vector_d;
+
+Vector::Vector(int s) {
+    size = s;
+    elements = *(new vector_d(size));
+}
 
 Vector::Vector(vector_d &elems){
     elements = *(new vector_d(elems));
@@ -21,30 +25,15 @@ void Vector::set(int i, double val) {
     elements[i] = val;
 }
 
-vector_d Vector::add(vector_d &vec) {
-    if(vec.size() != size){
-        throw "Cannot add vectors of different sizes";
+int Vector::getSize() {
+    return size;
+}
+
+void Vector::print() {
+    cout << "[" << "";
+    for(int i = 0; i < size; i++){
+        cout << elements[i] << ' ';
     }
-    vector_d tmp(size);
-    for(int i = 0; i < size; i ++){
-        tmp[i] = elements[i]+vec[i];
-    }
-    return tmp;
-}
+    cout << "]" << "";
 
-vector_d Vector::multiply(vector_d &vec) {
-    return nullptr;
 }
-
-vector_d Vector::multiply(double s) {
-    return nullptr;
-}
-
-vector_d Vector::cross(vector_d &vec) {
-    return nullptr;
-}
-
-bool Vector::equal(vector_d &vec) {
-    return false;
-}
-

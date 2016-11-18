@@ -16,14 +16,12 @@ private:
 
 public:
     Vector(vector_d &elems);
+    Vector(int s);
     double get(int i);
     void set(int i, double val);
-    vector_d add(vector_d &vec);
-    vector_d multiply(vector_d &vec);
-    vector_d multiply(double s);
-    vector_d cross(vector_d &vec);
-    bool equal(vector_d &vec);
+    int getSize();
 
+    void print();
 };
 
 
