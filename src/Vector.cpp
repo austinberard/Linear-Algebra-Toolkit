@@ -17,31 +17,24 @@ Vector::Vector(vector_d &elems){
     size = elements.size();
 }
 
-double Vector::get(int i) {
-    return elements[i];
-}
 
 void Vector::set(int i, double val) {
     elements[i] = val;
 }
 
-int Vector::getSize() {
-    return size;
-}
-
-void Vector::print() {
+void Vector::print() const{
     for(int i = 0; i < size; i++){
         cout << "[" << elements[i] << "]" << endl;
     }
 
 }
 
-bool Vector::equals(Vector &vectorX) {
-    if(size != vectorX.getSize()){
+bool Vector::equals(Vector &vectorY) {
+    if(size != vectorY.getSize()){
         return false;
     }
     for(int i = 0; i < size; i ++){
-        if(this->get(i) != vectorX.get(i)){
+        if(this->get(i) != vectorY.get(i)){
             return false;
         }
     }

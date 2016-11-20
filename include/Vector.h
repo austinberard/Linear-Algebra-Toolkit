@@ -7,9 +7,8 @@
 
 #include <vector>
 
-using namespace std;
 class Vector {
-typedef vector<double> vector_d;
+typedef std::vector<double> vector_d;
 private:
     int size;
     vector_d elements;
@@ -17,11 +16,11 @@ private:
 public:
     Vector(vector_d &elems);
     Vector(int s);
-    double get(int i);
+    int getSize() const {return size;}
+    double get(int i) const {return elements[i];}
     void set(int i, double val);
-    int getSize();
-    void print();
-    bool equals(Vector &vectorX);
+    void print() const;
+    bool equals(Vector &vectorY);
 };
 
 
