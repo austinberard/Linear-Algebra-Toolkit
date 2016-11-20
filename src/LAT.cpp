@@ -8,19 +8,37 @@ typedef double scalar;
 namespace LAT{
 
     Vector multiply(Vector &vectorX, Vector &vectorY) {
-        return Vector(0);
+        if(vectorX.getSize() != vectorY.getSize()){
+            throw "Can not multiply vectors of different sizes";
+        }
+
+        int sizeOfVec = vectorX.getSize();
+        Vector tmp(sizeOfVec);
+        for(int i = 0; i < sizeOfVec; i++){
+            double cur = vectorX.get(i) * vectorY.get(i);
+            tmp.set(i, cur);
+        }
+        return tmp;
     }
 
-    Vector multiply(scalar c, Vector &vectorY) {
-        return Vector(0);
+    Vector multiply(scalar c, Vector &vectorX) {
+        int sizeOfVec = vectorX.getSize();
+        Vector tmp(sizeOfVec);
+        for(int i = 0; i < sizeOfVec; i++){
+            double cur = vectorX.get(i) * c;
+            tmp.set(i, cur);
+        }
+
+        return tmp;
     }
 
     Vector add(Vector &vectorX, Vector &vectorY) {
         if(vectorX.getSize() != vectorY.getSize()){
             throw "Can not add vectors of different sizes";
         }
-        Vector tmp(vectorX.getSize());
-        for(int i = 0; i < vectorX.getSize(); i++){
+        int sizeOfVec = vectorX.getSize();
+        Vector tmp(sizeOfVec);
+        for(int i = 0; i < sizeOfVec; i++){
             double cur = vectorX.get(i) + vectorY.get(i);
             tmp.set(i, cur);
         }
@@ -28,10 +46,11 @@ namespace LAT{
     }
 
     Vector cross(Vector &vectorX, Vector &vectorY) {
+        //TODO implement functionality
         return Vector(0);
     }
 
     bool equal(Vector &vectorX, Vector &vectorY) {
-        return false;
+        return vectorX.equals(vectorY);
     }
 }

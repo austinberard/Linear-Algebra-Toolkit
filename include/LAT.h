@@ -9,7 +9,7 @@
 typedef double scalar;
 namespace LAT{
     Vector multiply(Vector &vectorX, Vector &vectorY);
-    Vector multiply(scalar c, Vector &vectorY);
+    Vector multiply(scalar c, Vector &vectorX);
     Vector add(Vector &vectorX, Vector &vectorY);
     Vector cross(Vector &vectorX, Vector &vectorY);
     bool equal(Vector &vectorX, Vector &vectorY);
