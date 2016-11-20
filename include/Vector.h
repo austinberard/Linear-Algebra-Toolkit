@@ -20,8 +20,8 @@ public:
     double get(int i);
     void set(int i, double val);
     int getSize();
-
     void print();
+    bool equals(Vector &vectorX);
 };
 
 

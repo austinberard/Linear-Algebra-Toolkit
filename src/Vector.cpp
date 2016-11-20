@@ -30,10 +30,20 @@ int Vector::getSize() {
 }
 
 void Vector::print() {
-    cout << "[" << "";
     for(int i = 0; i < size; i++){
-        cout << elements[i] << ' ';
+        cout << "[" << elements[i] << "]" << endl;
     }
-    cout << "]" << "";
 
+}
+
+bool Vector::equals(Vector &vectorX) {
+    if(size != vectorX.getSize()){
+        return false;
+    }
+    for(int i = 0; i < size; i ++){
+        if(this->get(i) != vectorX.get(i)){
+            return false;
+        }
+    }
+    return true;
 }
