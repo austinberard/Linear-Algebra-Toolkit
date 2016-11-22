@@ -4,8 +4,8 @@
 
 #include <iostream>
 #include "../include/Vector.h"
-using namespace std;
-typedef vector<double> vector_d;
+
+typedef std::vector<double> vector_d;
 
 Vector::Vector(int s) {
     size = s;
@@ -24,7 +24,7 @@ void Vector::set(int i, double val) {
 
 void Vector::print() const{
     for(int i = 0; i < size; i++){
-        cout << "[" << elements[i] << "]" << endl;
+        std::cout << "[" << elements[i] << "]" << std::endl;
     }
 
 }
